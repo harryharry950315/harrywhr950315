@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+        <button type="button" onclick="uploladimg()">hi</button>
+        <div id="show"></div>
+  </body>
+  <script>
+    async function uploladimg(){    
+        let imglink = prompt("輸入連結");
+        if(imglink.includes("https://drive.google.com/file/d/")){
+            const showimg = imglink.split('/');
+            var i = document.createElement('img');
+            i.src=  "https://drive.google.com/thumbnail?id="+showimg[5];
+            document.getElementById('show').appendChild(i);
+            await fetch("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?type=uploadimg&user=s3050208@classroom.ksvs.kh.edu.tw&result="+showimg[5]);
+        }
+        else alert("請上傳google雲端連結");
+        
+        }
+  </script>
+</html>
