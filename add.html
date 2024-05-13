@@ -43,7 +43,7 @@
     <script>
         console.log('hi');
         var continue_button=document.getElementById("upload").addEventListener('click',async function() {
-        var username="test";
+        var username=localStorage.getItem("email");
         var result=document.getElementById('name').value;
         var type="newrecord";
         var lds = document.getElementById('loading');
