@@ -81,7 +81,7 @@
         var animal_check=document.getElementById("animal").checked;
         var eco_check=document.getElementById("eco").checked;
         var green_check=document.getElementById("green").checked;
-        var username="test2";
+        var username=localStorage.getItem("email");
         var result=reduce_check+"_"+animal_check+"_"+eco_check+"_"+green_check;
         var type="upload";
         var lds = document.getElementById('loading');
