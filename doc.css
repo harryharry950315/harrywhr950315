@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body {
+
+  background: url(https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?cs=srgb&dl=pexels-eberhardgross-1366919.jpg&fm=jpg);
+    background-size: cover; /* 图像尽可能填充容器 */
+    background-repeat: no-repeat; /* 防止图像重复 */
+    background-attachment: fixed;
+}
+
+.h1{
+  font-weight: bold !important;
+}
+
+.padding{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.container {
+  max-width: 1050px;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  background-color: rgba(255, 255, 255, 0.9); /* 将最后一个值改为适当的不透明度 */
+  height: 100vh;
+  width: 100%;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* 这里可以保持原来的值，或者尝试其他值 */
+}
+
+.navbar .menu-items li {
+  margin-top: 15%;
+  font-size: 1.5rem;
+  font-weight: bolder !important;
+}
+
+.logo {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: lighter !important;
+  position: absolute;
+  bottom: 12%;
+  right: 10px;
+  font-size: 1px;
+  color: #0e2431;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
+
+.toggler {
+  color: #a1a1a4;
+  font-size: 1.25em;
+  margin-left: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+.toggler.active {
+  color: #000;
+}
+.surveys {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.survey-item {
+  display: block;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0 2px 1px rgba(170, 170, 170, 0.25);
+}
+.survey-name {
+  font-weight: 400;
+}
+.list .survey-item {
+  position: relative;
+  padding: 0;
+  font-size: 14px;
+  line-height: 40px;
+}
+.list .survey-item .pull-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 800px) {
+  .list .survey-item .stage:not(.active) {
+    display: none;
+ }
+}
+@media screen and (max-width: 700px) {
+  .list .survey-item .survey-progress-bg {
+    display: none;
+ }
+}
+@media screen and (max-width: 600px) {
+  .list .survey-item .pull-right {
+    position: static;
+    line-height: 20px;
+    padding-bottom: 10px;
+ }
+}
+.list .survey-country, .list .survey-progress, .list .survey-completes, .list .survey-end-date {
+  color: #a1a1a4;
+}
+.list .survey-country, .list .survey-completes, .list .survey-end-date, .list .survey-name, .list .survey-stage {
+  margin: 0 10px;
+}
+.list .survey-country {
+  margin-right: 0;
+}
+.list .survey-end-date, .list .survey-completes, .list .survey-country, .list .survey-name {
+  vertical-align: middle;
+}
+.list .survey-end-date {
+  display: inline-block;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.survey-stage .stage {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0 2px;
+  background: #f2f2f2;
+  text-indent: -9999px;
+  color: transparent;
+  line-height: 16px;
+}
+.survey-stage .stage.active {
+  background: #a1a1a4;
+}
+.list .list-only {
+  display: auto;
+}
+.list .grid-only {
+  display: none !important;
+}
+.grid .grid-only {
+  display: auto;
+}
+.grid .list-only {
+  display: none !important;
+}
+.grid .survey-item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  height: 200px;
+  width: 250px;
+  margin: 10px;
+}
+@media screen and (max-width: 600px) {
+  .grid .survey-item {
+    display: block;
+    width: auto;
+    height: 150px;
+    margin: 10px auto;
+ }
+}
+.grid .survey-name {
+  display: block;
+  max-width: 80%;
+  font-size: 16px;
+  line-height: 20px;
+}
+.grid .survey-country {
+  font-size: 11px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.grid .survey-country, .grid .survey-end-date {
+  color: #a1a1a4;
+}
+.grid .survey-end-date:before {
+  content: 'Ends\00a0';
+}
+.grid .survey-end-date.ended:before {
+  content: 'Ended\00a0';
+}
+.grid .survey-progress {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+}
+.grid .survey-progress-bg {
+  width: 40%;
+  display: block;
+}
+@media screen and (max-width: 200px) {
+  .grid .survey-progress-bg {
+    display: none;
+ }
+}
+.grid .survey-progress-labels {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  line-height: 40px;
+}
+@media screen and (max-width: 200px) {
+  .grid .survey-progress-labels {
+    right: auto;
+    left: 10px;
+ }
+}
+.grid .survey-progress-label {
+  line-height: 21px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.grid .survey-completes {
+  line-height: 21px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+.grid .survey-stage {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.grid .survey-stage .stage {
+  display: none;
+}
+.grid .survey-stage .active {
+  display: block;
+}
+.grid .survey-end-date {
+  font-size: 12px;
+  line-height: 20px;
+}
+.survey-progress-label {
+  vertical-align: middle;
+  margin: 0 10px;
+  color: #8dc63f;
+}
+.survey-progress-bg {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 100px;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #eee;
+}
+.survey-progress-fg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  background: #8dc63f;
+}
+p, h3 {
+  margin: 0;
+  padding: 10px 0;
+}
+.wrap {
+  width: 500px;
+  min-width: 500px;
+  margin: 0 auto;
+  border: 1px solid gray;
+  text-align: center;
+}
+.content {
+  background: linear-gradient(to bottom, #dbf6e9, #dae2f8);
+  position: relative;
+  padding-bottom: 30px;
+}
+.block {
+  margin: 40px auto;
+  width: 300px;
+  height: 300px;
+  border: 10px solid #9ddfd3;
+  background-color: #bce6eb;
+  color: #274046;
+}
+.button {
+ /* 按钮样式*/
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.floatButton {
+  position: fixed;
+  bottom: 40px;
+  left: 75%;
+  right: 0;
+  margin: 0 auto;
+  
+}
+.footer {
+  background-color: #eee;
+}

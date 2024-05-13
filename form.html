@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Quiz App</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script>
+      if(localStorage.getItem("email") == null)location.href=("https://harryharry950315.github.io/harrywhr950315/login.html")
+    </script>
+</head>
+<style>
+    .no-close .ui-dialog-titlebar-close {
+        display: none;
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="navbar">
+          <div class="container2 nav-container">
+              <input class="checkbox" type="checkbox" name="" id="" />
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>  
+            <div class="logo">
+              <h1>我減塑我驕傲</h1>
+            </div>
+            <div class="menu-items">
+              <li><a href="./form.html" style=" font-size: 50px">每日表單</a></li>
+              <li><a href="./doc.html"style=" font-size: 50px">每周紀錄</a></li>
+              <li><a href="./upload.html"style=" font-size: 50px">上傳圖片</a></li>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div id="quiz">
+            
+
+            <hr style="margin-bottom: 20px">
+            
+            <p id="question"></p>
+            <center>
+
+                <div class="button-grp">
+                    <button id="btn0"><span id="choice0"></span></button>
+                    <button id="btn1"><span id="choice1"></span></button>
+                    <button id="btn2"><span id="choice2"></span></button>
+                    <button id="btn3"><span id="choice3"></span></button>
+                </div>
+            </center>
+                
+            <hr style="margin-top: 50px">
+
+            <footer>
+                <p id="progress">Question x of y</p>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    
+</script>
+<script src="form.js"></script>
+
+</html>

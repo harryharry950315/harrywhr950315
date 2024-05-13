@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/add/add.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script>
+    if(localStorage.getItem("email") == null)location.href=("https://harryharry950315.github.io/harrywhr950315/login.html")
+  </script>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+          <div class="container nav-container">
+              <input class="checkbox" type="checkbox" name="" id="" />
+
+            <div class="logo">
+              <h1 style="font-size: 26px;">我減塑我驕傲</h1>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <center><h1 class="h1">記錄</h1></center>
+      <br>
+      <br>
+      <br>
+      <center><div class="form__group field">
+        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+        <label for="name" class="form__label">寫下減塑成果：</label></center>
+      </div>
+      <br>
+      <br>
+      <center><button id="upload"><a href="javascript: void(0)" class="btn">
+        <span style="font-weight: bold !important;" >上傳</span>
+        <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+    </a></button></center>
+    <script>
+        console.log('hi');
+        var continue_button=document.getElementById("upload").addEventListener('click',async function() {
+        var username="test";
+        var result=document.getElementById('name').value;
+        var type="newrecord";
+        var lds = document.getElementById('loading');
+        console.log("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?type="+type+"&user="+username+"&result="+result);
+        await fetch("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?type="+type+"&user="+username+"&result="+result, {
+        mode: 'no-cors'
+   });
+    location.href='./doc.html';
+});
+</script>
+</body>
+</html>

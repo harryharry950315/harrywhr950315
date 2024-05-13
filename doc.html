@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/doc/doc.css">
+  <script>
+    if(localStorage.getItem("email") == null)location.href=("https://harryharry950315.github.io/harrywhr950315/login.html")
+  </script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<script>
+  test();
+async function test() {
+
+
+
+  var data;
+  await fetch("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?user=test&type=getrecord")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (myJson) {
+      console.log(myJson);
+      data = myJson;
+
+    });
+
+  data.result.forEach(element => {
+    console.log(element);
+    var date = element.date;
+    var record = element.record;
+    var w = `
+
+    <span class="survey-country list-only">
+      減塑紀錄
+    </span>
+
+    <span class="survey-name">
+      ${record}
+    </span>
+
+    <span class="survey-country grid-only">
+      UK
+    </span>
+
+    <div class="pull-right">
+
+      <span class="survey-progress">
+        <span class="survey-progress-bg">
+          <span class="survey-progress-fg" style="width: 88%;"></span>
+        </span>
+
+        <span class="survey-progress-labels">
+          <span class="survey-progress-label">
+            88%
+          </span>
+
+          <span class="survey-completes">
+            490 / 500
+          </span>
+        </span>
+      </span>
+
+      <span class="survey-end-date ended">
+        ${date}
+      </span>
+      <span class="survey-stage">
+        <span class="stage draft">Draft</span>
+        <span class="stage awarded">Awarded</span>
+        <span class="stage live">Live</span>
+        <span class="stage ended active">Ended</span>
+      </span>
+    </div>
+  `
+    var li = document.createElement('li');
+    li.className = "survey-item";
+    li.innerHTML = w;
+    const sd = document.getElementById("sg");
+    sd.appendChild(li);
+  });
+
+}
+
+
+</script>
+
+<body>
+    <nav>
+        <div class="navbar">
+          <div class="container nav-container">
+              <input class="checkbox" type="checkbox" name="" id="" />
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>  
+            <div class="logo">
+              <h1 style="font-size: 26px;">我減塑我驕傲</h1>
+            </div>
+            <div class="menu-items">
+              <li><a href="./form.html" style=" font-size: 20px">每日表單</a></li>
+              <li><a href="./doc.html"style=" font-size: 20px">每周紀錄</a></li>
+              <li><a href="./upload.html"style=" font-size: 20px">上傳圖片</a></li>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <center><h1 class="h1">記錄下每天的減塑吧！</h1></center>
+      <br>
+      <center>
+        <div class="padding">
+          <ul class="surveys grid" id="sg">
+          </ul>
+        </div>
+      </center>
+      <div class='button floatButton' id='floatButton'>
+          <a href="/add/" class="btn btn-info btn-lg">
+              <span class="glyphicon glyphicon-plus-sign"></span> 新增
+          </a>
+      </div>
+      </div>
+      <span class="toggler active" data-toggle="grid"><span class="entypo-layout"></span></span>
+      <span class="toggler" data-toggle="list"><span class="entypo-list"></span></span>
+      <br>
+      <br>
+      <br>
+      <br>
+</body>
+</html>

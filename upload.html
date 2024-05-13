@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tw">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="upload.css">
+    <script>
+      if(localStorage.getItem("eamil") == null)location.href=("https://harryharry950315.github.io/harrywhr950315/login.html")
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">
+        <div class="container nav-container">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>  
+          <div class="logo">
+            <h1 style="font-size: 26px;">我減塑我驕傲</h1>
+          </div>
+          <div class="menu-items">
+            <li><a href="./form.html" style=" font-size: 50px">每日表單</a></li>
+            <li><a href="./doc.html"style=" font-size: 50px">每周紀錄</a></li>
+            <li><a href="./upload.html"style=" font-size: 50px">上傳圖片</a></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <center><h1 class="h1">上傳照片</h1></center>
+    <br>
+    <br>
+    <br>
+    <center><div class="form__group field">
+      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+      <label for="name" class="form__label">寫下減塑成果：</label></center>
+    </div>
+    <br>
+    <br>
+    <center><button type="button" id="upload"><a href="javascript: void(0)" class="btn">
+      <span style="font-weight: bold !important;" >上傳</span>
+      <svg width="13px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+
+        <div id="show"></div>
+        <br>
+        <br>
+        <br>
+  </body>
+  <script>
+      document.getElementById("upload").addEventListener('click',async function() {
+        let imglink = document.getElementById("name").value;
+        alert(imglink);
+        if(imglink.includes("https://drive.google.com/file/d/")){
+            const showimg = imglink.split('/');
+            var i = document.createElement('img');
+            i.src=  "https://drive.google.com/thumbnail?id="+showimg[5];
+            document.getElementById('show').appendChild(i);
+            await fetch("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?type=uploadimg&user="+localStorage.getItem("email")+"&result="+showimg[5]);
+        }
+        
+        else alert("請上傳google雲端連結");
+        
+        }
+      );
+  </script>
+</html>
