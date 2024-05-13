@@ -45,7 +45,7 @@
         var continue_button=document.getElementById("upload").addEventListener('click',async function() {
         var username=localStorage.getItem("email");
         var result=document.getElementById('name').value;
-        var type="newrecord";
+        var type="newrecordw";
         var lds = document.getElementById('loading');
         console.log("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?type="+type+"&user="+username+"&result="+result);
         await fetch("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?type="+type+"&user="+username+"&result="+result, {
