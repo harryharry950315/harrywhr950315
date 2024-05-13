@@ -21,7 +21,8 @@ async function test() {
 
 
   var data;
-  await fetch("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?user=test&type=getrecord")
+  var user = localStorage.getItem("email");
+  await fetch("https://script.google.com/macros/s/AKfycbxoFCSuQPmNh4vQmoFqbikgxacyRoqOHrOI2pYauVHsqXrsrLn5I_jLvyijmqWlY1LJlQ/exec?user=" + user + "&type=getrecord")
     .then(function (response) {
       return response.json();
     })
