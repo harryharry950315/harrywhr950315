@@ -55,7 +55,7 @@
       document.getElementById("upload").addEventListener('click',async function() {
         let imglink = document.getElementById("name").value;
         alert(imglink);
-        if(imglink.includes("https://drive.google.com/file/d/")){
+        if(imglink.includes("https://drive.google.com/")){
             const showimg = imglink.split('/');
             var i = document.createElement('img');
             i.src=  "https://drive.google.com/thumbnail?id="+showimg[5];
